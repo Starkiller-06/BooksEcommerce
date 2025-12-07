@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 use Laravel\Fortify\Features;
+use App\Http\Controllers\AuthController;
 
 Route::get('/', function () {
     return Inertia::render('welcome', [
@@ -15,6 +16,15 @@ Route::middleware(['auth', 'verified'])->group(function () {
         return Inertia::render('dashboard');
     })->name('dashboard');
 });
+
+Route::middleware('guest')->group(function () {
+    Route::get('/login', [AuthController::class, 'login'])->name('login');
+    Route::get('/register', [AuthController::class, 'register'])->name('register');
+    Route::post('/login',[AuthController::class,'store']);
+    Route::post('/register',[AuthController::class,'create']);
+});  
+
+
 
 // Define a new route
 Route::get('/home', function() {

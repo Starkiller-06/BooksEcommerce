@@ -1,6 +1,5 @@
 import { login } from '@/routes';
-import { store } from '@/routes/register';
-import { Form, Head } from '@inertiajs/react';
+import { Form, Head, useForm } from '@inertiajs/react';
 
 import InputError from '@/components/input-error';
 import TextLink from '@/components/text-link';
@@ -10,20 +9,27 @@ import { Label } from '@/components/ui/label';
 import { Spinner } from '@/components/ui/spinner';
 import AuthLayout from '@/layouts/auth-layout';
 
+
+
 export default function Register() {
+
+    const {data, setData, post, errors} = useForm({
+            email: '',
+            password: ''
+        })
+    
+        function handleSubmit(e:React.FormEvent) {
+            e.preventDefault() 
+            post('/login')
+        }
+
     return (
         <AuthLayout
             title="Create an account"
             description="Enter your details below to create your account"
         >
             <Head title="Register" />
-            <Form
-                {...store.form()}
-                resetOnSuccess={['password', 'password_confirmation']}
-                disableWhileProcessing
-                className="flex flex-col gap-6"
-            >
-                {({ processing, errors }) => (
+            <form>
                     <>
                         <div className="grid gap-6">
                             <div className="grid gap-2">
@@ -139,13 +145,9 @@ export default function Register() {
 
                         <div className="text-center text-sm text-muted-foreground">
                             Already have an account?{' '}
-                            <TextLink href={login()} tabIndex={8}>
-                                Log in
-                            </TextLink>
                         </div>
                     </>
-                )}
-            </Form>
+            </form>
         </AuthLayout>
     );
 }
