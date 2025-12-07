@@ -21,7 +21,7 @@ const GenreCard = ({ genre, icon: Icon, color, quote }: GenreCardProps) => {
     return (
         <a
             href="#"
-            className="w-full p-4 rounded-xl border-[1px] border-slate-300 relative overflow-hidden group bg-[#EBE2D8] shadow-md block"
+            className="w-full p-4 rounded-xl border-[1px] border-slate-300 relative overflow-hidden group bg-[#EDE5DD] shadow-md block"
         >
             {/* 1. Background Fill Effect */}
             <div
@@ -31,13 +31,13 @@ const GenreCard = ({ genre, icon: Icon, color, quote }: GenreCardProps) => {
 
             {/* 2. Large Floating Icon Effect */}
             <Icon
-                className="absolute z-10 -top-12 -right-12 w-32 h-32 text-[#E3D7C8] group-hover:text-white/20 group-hover:rotate-12 transition-transform duration-300"
+                className="absolute z-10 -top-12 -right-12 w-32 h-32 text-[#D7C4B2] group-hover:text-white/20 group-hover:rotate-12 transition-transform duration-300"
             />
 
             {/* 3. Main Icon (Small) */}
             <div
                 style={{ color: color }}
-                className="mb-2 text-2xl group-hover:text-white transition-colors relative z-20 duration-300"
+                className="mb-2 text-2xl group-hover:!text-white transition-colors relative z-20 duration-300"
             >
                 <Icon className="h-6 w-6" />
             </div>
@@ -103,7 +103,7 @@ export default function Home() {
     return (
         <div>
             <ShopLayout>            
-                <section className="w-screen h-[450px] overflow-hidden bg-[#DBDFD8] flex flex-col justify-center items-center gap-6">
+                <section className="w-screen h-[450px] overflow-hidden bg-[#F5E9E9] flex flex-col justify-center items-center gap-6">
                     <h1 className="text-primary font-montecarlo text-[3.5rem] mt-[1rem]">Start your journey</h1>
                     <CircularGallery bend={0} textColor="#592508"/>
                 </section>
