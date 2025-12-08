@@ -20,10 +20,10 @@ export default function Welcome({
         />
       </Head>
 
-      <header className="w-full fixed top-0 z-50 bg-primary">
-        <nav className="flex w-full justify-between items-center p-4">
-          <p className="text-white text-2xl font-bold">Eterna</p>
-          <div className="flex gap-6">
+      <header className="w-full fixed top-0 z-50 bg-primary p-4">
+        <nav className="flex w-full justify-between items-center px-6">
+          <p className="text-white text-4xl font-montecarlo">Eterna</p>
+          <div className="flex gap-10">
             <a href="#" className="text-white hover:underline">
               About Us
             </a>
@@ -63,14 +63,14 @@ export default function Welcome({
                   <>
                     <Link
                       href={login()}
-                      className="inline-block rounded-sm border border-foreground px-5 py-1.5 text-sm leading-normal text-foreground hover:bg-[#F2DBD0] transition-colors duration-300"
+                      className="inline-block rounded-sm border border-accent px-5 py-1.5 text-sm leading-normal text-foreground hover:bg-[#E7DBD8] transition-colors duration-300"
                     >
                       Log in
                     </Link>
                     {canRegister && (
                       <Link
                         href={register()}
-                        className="inline-block rounded-sm border border-foreground px-5 py-1.5 text-sm leading-normal text-foreground hover:bg-[#F2DBD0] transition-colors duration-300"
+                        className="inline-block rounded-sm border border-accent px-5 py-1.5 text-sm leading-normal text-foreground hover:bg-[#E7DBD8] transition-colors duration-300"
                       >
                         Register
                       </Link>
@@ -81,7 +81,7 @@ export default function Welcome({
             </section>
 
             <section
-              className="flex-1 relative flex justify-end -top-11"
+              className="flex-1 relative flex justify-end -top-9"
               style={{ height: 600 }}
             >
               <CardSwap
@@ -89,7 +89,7 @@ export default function Welcome({
                 verticalDistance={70}
                 delay={4000}
                 pauseOnHover={false}
-                width={400}
+                width={380}
                 height={600}
               >
                 <Card className="overflow-hidden">
@@ -100,19 +100,25 @@ export default function Welcome({
                 </Card>
                 <Card className="overflow-hidden">
                   <img
-                    src="./no_longer_human.jpg"
+                    src="./les_miserables4.png"
                     className="absolute inset-0 w-full h-full object-cover"
                   />
                 </Card>
                 <Card className="overflow-hidden">
                   <img
-                    src="./pride_and_prejudice.jpg"
+                    src="./lotr.jpg"
                     className="absolute inset-0 w-full h-full object-cover"
                   />
                 </Card>
                 <Card className="overflow-hidden">
                   <img
                     src="./odyssey.jpg"
+                    className="absolute inset-0 w-full h-full object-cover"
+                  />
+                </Card>
+                <Card className="overflow-hidden">
+                  <img
+                    src="./wuthering_heights.jpg"
                     className="absolute inset-0 w-full h-full object-cover"
                   />
                 </Card>

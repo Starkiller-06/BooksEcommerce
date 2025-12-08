@@ -21,7 +21,7 @@ const GenreCard = ({ genre, icon: Icon, color, quote }: GenreCardProps) => {
     return (
         <a
             href="#"
-            className="w-full p-4 rounded-xl border-[1px] border-slate-300 relative overflow-hidden group bg-[#EDE5DD] shadow-md block"
+            className="w-full p-4 rounded-xl border-[1px] border-slate-300 relative overflow-hidden group bg-bg-secondary shadow-md block"
         >
             {/* 1. Background Fill Effect */}
             <div
@@ -82,7 +82,7 @@ const GenreCategories = () => {
 
     return (
         <div className="p-4">
-            <h2 className="text-2xl font-bold mb-4">What's your mood?</h2>
+            <h2 className="text-2xl font-bold mb-4 text-accent mb-8">Explore Worlds Within Pages</h2>
             <div className="grid gap-4 grid-cols-2 lg:grid-cols-4 xl:grid-cols-5">
                 {categories.map((gen, index) => (
                     <GenreCard
@@ -103,12 +103,18 @@ export default function Home() {
     return (
         <div>
             <ShopLayout>            
-                <section className="w-screen h-[450px] overflow-hidden bg-[#F5E9E9] flex flex-col justify-center items-center gap-6">
+                <section className="w-screen h-[450px] overflow-hidden bg-[#E7DBD8] flex flex-col justify-center items-center gap-6">
                     <h1 className="text-primary font-montecarlo text-[3.5rem] mt-[1rem]">Start your journey</h1>
                     <CircularGallery bend={0} textColor="#592508"/>
                 </section>
                 <section className="my-[3rem] mx-[3rem]">
                     <GenreCategories/>
+                </section>
+                <section className="my-[3rem] mx-[3rem]">
+                    <h2 className="text-2xl font-bold mb-4 text-accent mb-8">Authors</h2>
+                </section>
+                <section className="my-[3rem] mx-[3rem]">
+                    <h2 className="text-2xl font-bold mb-4 text-accent mb-8">The Literary Classics Collection</h2>
                 </section>
             </ShopLayout>
         </div>

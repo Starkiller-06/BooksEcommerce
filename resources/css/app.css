@@ -1,27 +1,26 @@
-@import url('https://fonts.googleapis.com/css2?family=Lobster&family=MonteCarlo&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=MonteCarlo&family=Zalando+Sans:ital,wght@0,200..900;1,200..900&display=swap');
+
 @import 'tailwindcss';
 @import "tw-animate-css";
 
 @source '../views';
 @source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
 
-/* @custom-variant dark (&:is(.dark *)); */
-
 @theme {
     --font-sans:
-        'Instrument Sans', ui-sans-serif, system-ui, sans-serif,
+        'Zalando Sans', ui-sans-serif, system-ui, sans-serif,
         'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol',
         'Noto Color Emoji';
 
     --font-montecarlo: 'MonteCarlo', cursive;
-    --font-lobster: 'Lobster', cursive;
+    
 
     --radius-lg: var(--radius);
     --radius-md: calc(var(--radius) - 2px);
     --radius-sm: calc(var(--radius) - 4px);
 
     --color-background: var(--background);
-    --color-background-secondary: var(--background-secondary);
+    --color-bg-secondary: var(--bg-secondary);
     --color-foreground: var(--foreground);
 
     --color-card: var(--card);
@@ -67,25 +66,30 @@
 
 :root {
     --background: #F6F2ED;
-    --background-secondary: #D2DBE4;
+    --bg-secondary: #EDE5DD;
+
     --foreground: #362320;
     --card: oklch(1 0 0);
     --card-foreground: oklch(0.145 0 0);
     --popover: oklch(1 0 0);
     --popover-foreground: oklch(0.145 0 0);
+
     --primary: #57091D;
     --primary-foreground: oklch(0.985 0 0);
-    --secondary: #B0B6A5;
+    --secondary: #F5E9E9;
     --secondary-foreground: oklch(0.205 0 0);
     --muted: rgb(245, 245, 245);
     --muted-foreground: oklch(0.556 0 0);
+
     --accent: #A80D32;
     --accent-foreground: oklch(0.205 0 0);
+
     --destructive: oklch(0.577 0.245 27.325);
     --destru5ctive-foreground: oklch(0.577 0.245 27.325);
+
     --border: oklch(0.922 0 0);
     --input: oklch(0.922 0 0);
-    --ring: oklch(0.87 0 0);
+    --ring: #C8ABAB;
     --chart-1: oklch(0.646 0.222 41.116);
     --chart-2: oklch(0.6 0.118 184.704);
     --chart-3: oklch(0.398 0.07 227.392);

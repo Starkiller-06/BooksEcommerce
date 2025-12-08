@@ -8,7 +8,7 @@ export default function Header() {
     return (
         <header className="w-full bg-primary p-4 text-primary-foreground">
             <nav className="flex w-full flex-row items-center justify-between px-6">
-                <h1 className="text-white text-4xl font-bold">Eterna</h1>    
+                <h1 className="text-white text-4xl font-montecarlo">Eterna</h1>    
                 <div className="relative flex w-1/3 max-w-md gap-2 mx-2 overflow-hidden rounded-md bg-white">
                     <Input
                         placeholder="I want a..."
