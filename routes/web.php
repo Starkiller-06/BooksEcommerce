@@ -11,10 +11,10 @@ Route::get('/', function () {
     ]);
 })->name('welcome');
 
-Route::middleware(['auth', 'verified'])->group(function () {
+Route::middleware(['auth', 'role:admin'])->prefix('admin')->group(function () {
     Route::get('dashboard', function () {
         return Inertia::render('dashboard');
-    })->name('dashboard');
+    })->name('admin.dashboard');
 });
 
 Route::middleware('guest')->group(function () {
@@ -23,8 +23,6 @@ Route::middleware('guest')->group(function () {
     Route::post('/login',[AuthController::class,'store']);
     Route::post('/register',[AuthController::class,'create']);
 });  
-
-
 
 // Define a new route
 Route::get('/home', function() {

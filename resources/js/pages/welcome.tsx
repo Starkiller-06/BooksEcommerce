@@ -1,4 +1,3 @@
-import { dashboard, login, register } from '@/routes';
 import { type SharedData } from '@/types';
 import { Head, Link, usePage } from '@inertiajs/react';
 import CardSwap, { Card } from '@/components/CardSwap';
@@ -54,22 +53,22 @@ export default function Welcome({
               <div className="flex items-center gap-4">
                 {auth.user ? (
                   <Link
-                    href={dashboard()}
+                    href={'/home'}
                     className="inline-block rounded-sm border px-5 py-1.5 text-sm leading-normal text-[#1b1b18] hover:border-[#1915014a]"
                   >
-                    Dashboard
+                    Home
                   </Link>
                 ) : (
                   <>
                     <Link
-                      href={login()}
+                      href={'/login'}
                       className="inline-block rounded-sm border border-accent px-5 py-1.5 text-sm leading-normal text-foreground hover:bg-[#E7DBD8] transition-colors duration-300"
                     >
                       Log in
                     </Link>
                     {canRegister && (
                       <Link
-                        href={register()}
+                        href={'/register'}
                         className="inline-block rounded-sm border border-accent px-5 py-1.5 text-sm leading-normal text-foreground hover:bg-[#E7DBD8] transition-colors duration-300"
                       >
                         Register
