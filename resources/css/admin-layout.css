@@ -1,0 +1,84 @@
+.admin-layout {
+    display: flex;
+    height: 100vh;        /* Full viewport height */
+    width: 100%;
+    overflow: hidden;     /* Prevents double scrollbars */
+}
+
+/* 2. The Sidebar */
+.admin-sidebar {
+    width: 250px;         /* Fixed width */
+    background-color: var(--primary); /* Dark grey */
+    color: var(--background);
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;       /* Prevents shrinking */
+}
+
+.sidebar-logo {
+    padding: 20px;
+    font-size: 1.25rem;
+    font-weight: bold;
+    border-bottom: 1px solid var(--background);
+}
+
+.sidebar-nav {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.sidebar-link {
+    color: var(--card);
+    text-decoration: none;
+    padding: 10px;
+    border-radius: 6px;
+    transition: background-color 0.2s;
+}
+
+.sidebar-link:hover {
+    background-color: var(--accent);
+    color: var(--background);
+}
+
+/* 3. The Right Side Wrapper */
+.admin-main {
+    flex: 1;              /* Takes all remaining width */
+    display: flex;
+    flex-direction: column;
+    background-color: var(--background);
+}
+
+/* 4. The Header */
+.admin-header {
+    height: 64px;
+    background-color: var(--card);
+    border-bottom: 1px solid #e5e7eb;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+}
+
+.logout-btn {
+    padding: 5px 16px;
+    color: var(--foreground);
+    border-radius: 4px;
+    cursor: pointer;
+    border-width: 1px;
+    border-color: var(--accent);
+    transition: background-color 0.2s;
+}
+
+.logout-btn:hover {
+  background-color: #C8ABAB;
+}
+
+
+/* 5. The Content Area (Where {children} are rendered) */
+.admin-content {
+    flex: 1;              /* Fills height below header */
+    overflow-y: auto;     /* Enables scrolling for content only */
+    padding: 24px;
+}

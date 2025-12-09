@@ -1,19 +1,16 @@
 'use client';
 
-import { Button } from '@/components/ui/button';
-import ShopLayout from '@/layouts/shop-layout';
 import CircularGallery from '@/components/CircularGallery';
-import { Sparkles, Heart, Atom, Hourglass, UserPen } from 'lucide-react';
+import ShopLayout from '@/layouts/shop-layout';
+import { Atom, Heart, Hourglass, Sparkles, UserPen } from 'lucide-react';
 import '../../css/home.css';
-
 
 interface GenreCardProps {
     genre: string;
-    icon: React.ElementType | null; 
+    icon: React.ElementType | null;
     color: string;
     quote: string;
 }
-
 
 const GenreCard = ({ genre, icon: Icon, color, quote }: GenreCardProps) => {
     if (!Icon) return null;
@@ -21,32 +18,30 @@ const GenreCard = ({ genre, icon: Icon, color, quote }: GenreCardProps) => {
     return (
         <a
             href="#"
-            className="w-full p-4 rounded-xl border-[1px] border-slate-300 relative overflow-hidden group bg-bg-secondary shadow-md block"
+            className="group relative block w-full overflow-hidden rounded-xl border-[1px] border-slate-300 bg-bg-secondary p-4 shadow-md"
         >
             {/* 1. Background Fill Effect */}
             <div
                 style={{ backgroundColor: color }}
-                className="absolute inset-0 z-0 translate-y-[100%] group-hover:translate-y-[0%] transition-transform duration-300"
+                className="absolute inset-0 z-0 translate-y-[100%] transition-transform duration-300 group-hover:translate-y-[0%]"
             />
 
             {/* 2. Large Floating Icon Effect */}
-            <Icon
-                className="absolute z-10 -top-12 -right-12 w-32 h-32 text-[#D7C4B2] group-hover:text-white/20 group-hover:rotate-12 transition-transform duration-300"
-            />
+            <Icon className="absolute -top-12 -right-12 z-10 h-32 w-32 text-[#D7C4B2] transition-transform duration-300 group-hover:rotate-12 group-hover:text-white/20" />
 
             {/* 3. Main Icon (Small) */}
             <div
                 style={{ color: color }}
-                className="mb-2 text-2xl group-hover:!text-white transition-colors relative z-20 duration-300"
+                className="relative z-20 mb-2 text-2xl transition-colors duration-300 group-hover:!text-white"
             >
                 <Icon className="h-6 w-6" />
             </div>
 
             {/* 4. Title/Genre Text */}
-            <h3 className="font-semibold text-xl  text-primary group-hover:text-white relative z-20 duration-300">
+            <h3 className="relative z-20 text-xl font-semibold text-primary duration-300 group-hover:text-white">
                 {genre}
             </h3>
-            <p className="text-foreground opacity-50 group-hover:text-white relative z-10 duration-300 italic text-sm mt-[8px]">
+            <p className="relative z-10 mt-[8px] text-sm text-foreground italic opacity-50 duration-300 group-hover:text-white">
                 "{quote}"
             </p>
         </a>
@@ -54,21 +49,40 @@ const GenreCard = ({ genre, icon: Icon, color, quote }: GenreCardProps) => {
 };
 
 const GenreCategories = () => {
-
     const categories = [
-        { genre: 'Fiction', color: '#CFA5D9', quote: 'It\'s the possibility of having a dream come true that makes life interesting.' },
-        { genre: 'Romance', color: '#E396BF', quote: 'To love or have loved, that is enough. Ask nothing further.' },
-        { genre: 'Science', color: '#5C9167', quote: 'Nothing in life is to be feared, it is only to be understood.'},
-        { genre: 'History', color: '#806252', quote: 'We are not makers of history. We are made by history.' },
-        { genre: 'Biography', color: '#78B1C4', quote: 'Be yourself; everyone else is already taken.' }
+        {
+            genre: 'Fiction',
+            color: '#CFA5D9',
+            quote: "It's the possibility of having a dream come true that makes life interesting.",
+        },
+        {
+            genre: 'Romance',
+            color: '#E396BF',
+            quote: 'To love or have loved, that is enough. Ask nothing further.',
+        },
+        {
+            genre: 'Science',
+            color: '#5C9167',
+            quote: 'Nothing in life is to be feared, it is only to be understood.',
+        },
+        {
+            genre: 'History',
+            color: '#806252',
+            quote: 'We are not makers of history. We are made by history.',
+        },
+        {
+            genre: 'Biography',
+            color: '#78B1C4',
+            quote: 'Be yourself; everyone else is already taken.',
+        },
     ];
 
     const getIcon = (genre: string) => {
         switch (genre) {
             case 'Fiction':
-                return Sparkles; 
+                return Sparkles;
             case 'Romance':
-                return Heart;    
+                return Heart;
             case 'Science':
                 return Atom;
             case 'History':
@@ -82,8 +96,10 @@ const GenreCategories = () => {
 
     return (
         <div className="p-4">
-            <h2 className="text-2xl font-bold mb-4 text-accent mb-8">Explore Worlds Within Pages</h2>
-            <div className="grid gap-4 grid-cols-2 lg:grid-cols-4 xl:grid-cols-5">
+            <h2 className="mb-4 mb-8 text-2xl font-bold text-accent">
+                Explore Worlds Within Pages
+            </h2>
+            <div className="grid grid-cols-2 gap-4 lg:grid-cols-4 xl:grid-cols-5">
                 {categories.map((gen, index) => (
                     <GenreCard
                         key={index}
@@ -96,27 +112,30 @@ const GenreCategories = () => {
             </div>
         </div>
     );
-}
-
+};
 
 export default function Home() {
     return (
-        <div>
-            <ShopLayout>            
-                <section className="w-screen h-[450px] overflow-hidden bg-[#E7DBD8] flex flex-col justify-center items-center gap-6">
-                    <h1 className="text-primary font-montecarlo text-[3.5rem] mt-[1rem]">Start your journey</h1>
-                    <CircularGallery bend={0} textColor="#592508"/>
-                </section>
-                <section className="my-[3rem] mx-[3rem]">
-                    <GenreCategories/>
-                </section>
-                <section className="my-[3rem] mx-[3rem]">
-                    <h2 className="text-2xl font-bold mb-4 text-accent mb-8">Authors</h2>
-                </section>
-                <section className="my-[3rem] mx-[3rem]">
-                    <h2 className="text-2xl font-bold mb-4 text-accent mb-8">The Literary Classics Collection</h2>
-                </section>
-            </ShopLayout>
-        </div>
+        <ShopLayout>
+            <section className="flex h-[450px] w-screen flex-col items-center justify-center gap-6 overflow-hidden bg-card">
+                <h1 className="mt-[1rem] font-montecarlo text-[3.5rem] text-primary">
+                    Start your journey
+                </h1>
+                <CircularGallery bend={0} textColor="#592508" />
+            </section>
+            <section className="mx-[3rem] my-[3rem]">
+                <GenreCategories />
+            </section>
+            <section className="mx-[3rem] my-[3rem]">
+                <h2 className="mb-4 mb-8 text-2xl font-bold text-accent">
+                    Authors
+                </h2>
+            </section>
+            <section className="mx-[3rem] my-[3rem]">
+                <h2 className="mb-4 mb-8 text-2xl font-bold text-accent">
+                    The Literary Classics Collection
+                </h2>
+            </section>
+        </ShopLayout>
     );
 }
