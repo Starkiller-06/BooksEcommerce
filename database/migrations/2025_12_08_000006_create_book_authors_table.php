@@ -11,13 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('media', function (Blueprint $table) {
-            $table->id();
+        Schema::create('book_authors', function (Blueprint $table) {
             $table->foreignId('book_id')->constrained('books')->onDelete('cascade');
-            $table->text('url')->nullable(); // Using text for URLs as discussed
-            $table->boolean('is_cover')->default(false);
-            $table->integer('position')->default(0);
-            $table->timestamps();
+            $table->foreignId('author_id')->constrained('authors')->onDelete('restrict');
+            $table->primary(['book_id', 'author_id']);
         });
     }
 
@@ -26,6 +23,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('media');
+        Schema::dropIfExists('book_authors');
     }
 };

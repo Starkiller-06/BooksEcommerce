@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Genre extends Model
 {
+    protected $fillable = ['genre'];
     /** @use HasFactory<\Database\Factories\GenreFactory> */
     use HasFactory;
 }

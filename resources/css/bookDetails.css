@@ -1,0 +1,142 @@
+.book-details-wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 4rem 2rem;
+    color: #1a1a1a;
+}
+
+.book-details-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 4rem;
+    align-items: flex-start;
+}
+
+@media (min-width: 900px) {
+    .book-details-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 6rem;
+    }
+}
+
+.book-cover-section {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+}
+
+.book-cover-bg-circle {
+    position: absolute;
+    width: 450px;
+    height: 450px;
+    background-color: var(--bg-secondary);
+    border-radius: 50%;
+    z-index: 0;
+}
+
+.book-cover-img {
+    position: relative;
+    z-index: 1;
+    width: 300px;
+    height: auto;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.2); 
+    transition: transform 0.3s ease;
+}
+
+.book-info-section {
+    padding-top: 1rem;
+}
+
+/* Title */
+.book-title-main {
+    font-size: 3rem;
+    line-height: 1.1;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    color: var(--primary);
+}
+
+.book-author-main {
+    font-size: 0.85rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 3rem;
+    color: var(--primary-foreground);
+    font-style: italic;
+}
+
+.book-synopsis-italic {
+    font-size: 1.15rem;
+    line-height: 1.6;
+    color: var(--foreground);
+    margin-bottom: 2rem;
+}
+
+.book-synopsis-full {
+    font-size: 0.95rem;
+    line-height: 1.7;
+    color: var(--foreground);
+    margin-bottom: 3rem;
+}
+
+.book-actions-row {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    margin-bottom: 3rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid var(--border);
+}
+
+.book-price-large {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--foreground);
+}
+
+.btn-add-cart {
+    background: var(--accent);
+    color: var(--background);
+    border: none;
+    border-radius: 5px;
+    padding: 0.6rem 1rem;    font-size: 0.85rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.btn-add-cart:hover {
+    background: var(--accent-secondary);
+}
+
+.btn-add-cart:disabled {
+    background: var(--muted-foreground);
+    cursor: not-allowed;
+}
+
+.book-meta-table {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem 3rem; 
+    font-size: 0.8rem;
+}
+
+.meta-row {
+    display: grid;
+    grid-template-columns: 100px 1fr; 
+    align-items: baseline;
+}
+
+.meta-label {
+    font-weight: 800;
+    color: var(--primary-foreground);
+}
+
+.meta-value {
+    color: var(--secondary-foreground);
+}

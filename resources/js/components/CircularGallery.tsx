@@ -478,52 +478,52 @@ class App {
   ) {
     const defaultItems = [
       {
-        image: `https://picsum.photos/seed/1/800/600?grayscale`,
-        text: 'Bridge'
+        image: `https://d28hgpri8am2if.cloudfront.net/book_images/onix/cvr9781524861759/pride-and-prejudice-9781524861759_hr.jpg`,
+        text: 'Pride & Prejudice'
       },
       {
-        image: `https://picsum.photos/seed/2/800/600?grayscale`,
-        text: 'Desk Setup'
+        image: `https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTBpbxW2Ep-HkVLHPNpdc2RdjM5GzLyRGkga31mN6iuLmts8rmt0XagmLX2jqM7AYo47SSUZ-TWmSv71YTaMGY13gUnWe70GRnl99JKzV8&s=10`,
+        text: 'The Stranger'
       },
       {
-        image: `https://picsum.photos/seed/3/800/600?grayscale`,
-        text: 'Waterfall'
+        image: `https://m.media-amazon.com/images/I/91vybHeMSxL._AC_UF1000,1000_QL80_.jpg`,
+        text: 'The Divine Comedy'
       },
       {
-        image: `https://picsum.photos/seed/4/800/600?grayscale`,
-        text: 'Strawberries'
+        image: `https://m.media-amazon.com/images/I/716hbj45eOL._AC_UF1000,1000_QL80_.jpg`,
+        text: 'Discrete Mathematics '
       },
       {
-        image: `https://picsum.photos/seed/5/800/600?grayscale`,
-        text: 'Deep Diving'
+        image: `https://harpercollins.co.uk/cdn/shop/files/x9780008386825_0b895bad-1966-4896-b2e9-937294231c3d_500x.jpg?v=1764822626`,
+        text: 'Death on the Nile'
       },
       {
-        image: `https://picsum.photos/seed/16/800/600?grayscale`,
-        text: 'Train Track'
+        image: `https://m.media-amazon.com/images/I/71ldz8QXgkL._AC_UF894,1000_QL80_.jpg`,
+        text: 'Frankenstein'
       },
       {
-        image: `https://picsum.photos/seed/17/800/600?grayscale`,
-        text: 'Santorini'
+        image: `https://almabooks.com/wp-content/uploads/2020/09/9781847498601.jpg`,
+        text: 'Gone with the Wind'
       },
       {
-        image: `https://picsum.photos/seed/8/800/600?grayscale`,
-        text: 'Blurry Lights'
+        image: `https://m.media-amazon.com/images/I/61Yxa2VwECS.jpg`,
+        text: 'Web Development'
       },
       {
-        image: `https://picsum.photos/seed/9/800/600?grayscale`,
-        text: 'New York'
+        image: `https://buybookbook.com/cdn/shop/files/9780345472328_900x.jpg?v=1748320201`,
+        text: 'Mindset'
       },
       {
-        image: `https://picsum.photos/seed/10/800/600?grayscale`,
-        text: 'Good Boy'
+        image: `https://m.media-amazon.com/images/I/71NsO7LVa3L._AC_UF1000,1000_QL80_.jpg`,
+        text: 'The Little Prince'
       },
       {
-        image: `https://picsum.photos/seed/21/800/600?grayscale`,
-        text: 'Coastline'
+        image: `https://www.harryhartog.com.au/cdn/shop/files/9780141037431.jpg?v=1725011993`,
+        text: 'Lolita '
       },
       {
-        image: `https://picsum.photos/seed/12/800/600?grayscale`,
-        text: 'Palm Trees'
+        image: `https://m.media-amazon.com/images/I/81KfrqpGhLL._AC_UF1000,1000_QL80_.jpg`,
+        text: 'The Importance of Being an Ernest'
       }
     ];
     const galleryItems = items && items.length ? items : defaultItems;

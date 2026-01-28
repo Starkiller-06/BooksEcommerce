@@ -7,6 +7,17 @@ use Illuminate\Database\Eloquent\Model;
 
 class ShippingInfo extends Model
 {
-    /** @use HasFactory<\Database\Factories\ShippingInfoFactory> */
     use HasFactory;
+
+    protected $table = 'shipping_info'; 
+
+    protected $fillable = [
+        'user_id', 
+        'recipient_name', 
+        'address', 
+        'city', 
+        'state', 
+        'zip_code', 
+        'phone_number'
+    ];
 }

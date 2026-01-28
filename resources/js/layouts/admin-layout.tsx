@@ -1,5 +1,6 @@
 import React from 'react';
 import '../../css/admin-layout.css';
+import { Link, router } from '@inertiajs/react';
 
 export default function AdminLayout({
     children,
@@ -12,21 +13,18 @@ export default function AdminLayout({
             <aside className="admin-sidebar">
                 <div className="sidebar-logo">Admin Panel</div>
                 <nav className="sidebar-nav">
-                    <a href="/admin/dashboard" className="sidebar-link">Dashboard</a>
-                    <a href="/admin/products" className="sidebar-link">Products</a>
-                    <a href="/admin/settings" className="sidebar-link">Settings</a>
+                    <Link href="/admin/dashboard" className="sidebar-link">Dashboard</Link>
+                    <Link href="/admin/products" className="sidebar-link">Products</Link>
+                    <Link href="/admin/orders" className="sidebar-link">Orders</Link>
                 </nav>
             </aside>
 
-            {/* RIGHT SIDE: Header + Content */}
             <div className="admin-main">
-                {/* Admin Header */}
                 <header className="admin-header">
                     <span>Admin Dashboard</span>
-                    <button className="logout-btn">Logout</button>
+                    <button className="logout-btn" onClick={() => router.post('/logout')}>Logout</button>
                 </header>
 
-                {/* Where your page content (children) goes */}
                 <main className="admin-content">
                     {children}
                 </main>

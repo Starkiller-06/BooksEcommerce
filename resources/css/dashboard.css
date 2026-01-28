@@ -1,38 +1,214 @@
-.dashboard-header {
+.dashboard-content-wrapper {
+    max-width: 80rem;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.dashboard-header-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 2.5rem;
+}
+
+.products-heading {
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--primary);
+    line-height: 1;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 5rem;
+}
+
+.stat-card {
+    background: var(--muted);
+    border-radius: 10px;
+    padding: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+    border: 1px solid rgba(0,0,0,0.03);
+    transition: transform 0.2s ease;
+}
+
+.stat-icon-wrapper {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.stat-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.stat-value {
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--foreground);
+    line-height: 1;
+    margin-bottom: 0.25rem;
+}
+
+.stat-label {
+    font-size: 0.875rem;
+    color: var(--secondary-foreground);
+    font-weight: 500;
+}
+
+.table-wrapper {
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+    border: 1px solid var(--border);
+    overflow: hidden;
+}
+
+.table-header-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1.5rem;
+}
+
+.table-title {
+    font-size: 1.125rem;
+    font-weight: 700;
+    color: var(--primary);
+}
+
+.badge-warning {
+    background-color: #a80d3119;
+    color: var(--accent-secondary);
+    font-size: 0.75rem;
+    padding: 0.25rem 0.75rem;
+    border-radius: 9999px;
+    font-weight: 600;
+    border: 1px solid var(--border);
+}
+
+.admin-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+
+
+.admin-thead th {
+    background-color: var(--bg-secondary);
+    padding: 1rem 1.5rem;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    color: var(--secondary-foreground);
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-align: left;
+}
+
+.table-row {
+    border-bottom: 1px solid var(--border);
+}
+.table-row:last-child {
+    border-bottom: none;
+}
+
+.td-cell {
+    padding: 1rem 1.5rem;
+    vertical-align: middle;
+}
+
+.low-stock {
+    background-color: #ff053f19;
+    color: var(--accent);
+    padding: 0.25rem 0.75rem;
+    border-radius: 9999px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    display: inline-block;
+}
+
+.out-stock {
+    background-color: var(--muted);
+    color: var(--destructive);
+    padding: 0.25rem 0.75rem;
+    border-radius: 9999px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    display: inline-block;
+}
+
+.format-badge {
+    background-color: var(--bg-secondary);
+    color: var(--primary);
+    padding: 2px 8px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: capitalize;
+}
+
+.actions-cell-content {
     display: flex;
     justify-content: flex-end;
-    width: 100%;
+    gap: 8px;
 }
 
-/* --- Button Styling --- */
+.action-btn {
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 6px;
+    transition: all 0.2s;
+}
+
+.btn-edit { 
+    color: #2563eb; 
+    background: var(--muted); 
+}
+
+.btn-edit:hover 
+{ background: #dbeafe; 
+}
+
+.btn-delete { 
+    color: #dc2626; 
+    background: var(--muted); 
+}
+.btn-delete:hover { 
+    background: var(--muted); 
+}
+
 .add-btn {
-    /* Basic button styles */
-    background-color: var(--accent); /* Example primary color */
+    background-color: var(--primary);
     color: var(--background);
-    padding: 0.5rem 1rem;
-    border: none;
-    border-radius: 0.375rem; /* Equivalent to rounded-md */
-    cursor: pointer;
-    font-weight: 500;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    font-weight: 600;
+    font-size: 0.9rem;
     transition: background-color 0.2s;
+    border: none;
+    cursor: pointer;
 }
-
 .add-btn:hover {
-    background-color: var(--accent-secondary); 
+    background-color: var(--accent);
 }
 
-/* dashboard.css */
-
-.container {
-    padding: 2.5rem;
-    /* FIX 1: Force it to take the full viewport width */
-    width: 100vw; 
-    /* FIX 2: Offset the default centering margin (mx-auto) of the parent */
-    position: relative;
-    left: 50%;
-    transform: translateX(-50%);
-    /* FIX 3: Counter the pt-16 from ShopLayout */
-    margin-top: -4rem; /* Assuming 16 = 4rem, adjust if necessary */
+.empty-state {
+    padding: 3rem;
+    text-align: center;
+    color: #6b7280;
 }
-
-/* ... other styles like .dashboard-header, .add-btn ... */

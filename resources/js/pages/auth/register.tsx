@@ -103,33 +103,12 @@ export default function Register() {
                             <InputError message={errors.password} />
                         </div>
 
-                        {/*<div className="grid gap-2">
-                            <Label htmlFor="password_confirmation">
-                                Confirm password
-                            </Label>
-                            <Input
-                                id="password_confirmation"
-                                type="password"
-                                required
-                                tabIndex={6}
-                                autoComplete="new-password"
-                                name="password_confirmation"
-                                placeholder="Confirm password"
-                                onChange={(e)=>setData('password', e.target.value)}
-                                value={data.password}
-                            />
-                            <InputError
-                                message={errors.password_confirmation}
-                            />
-                        </div>*/}
-
                         <Button
                             type="submit"
                             className="mt-2 w-full"
                             tabIndex={7}
                             data-test="register-user-button"
                         >
-                            {/*processing && <Spinner />*/}
                             Create account
                         </Button>
                     </div>

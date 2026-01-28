@@ -11,12 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('order_items', function (Blueprint $table) {
+        Schema::create('media', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('order_id')->constrained('orders')->onDelete('cascade');
-            $table->foreignId('bcopy_id')->constrained('book_copies')->onDelete('restrict');
-            $table->integer('quantity');
-            $table->decimal('price_each', 10, 2);
+            // Note: We explicitly point to 'book_copies' table because the col name 'bcopy_id' doesn't follow strict convention
+            $table->foreignId('bcopy_id')->constrained('book_copies')->onDelete('cascade');
+            $table->text('img_path')->nullable();
             $table->timestamps();
         });
     }
@@ -26,6 +25,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('order_items');
+        Schema::dropIfExists('media');
     }
 };

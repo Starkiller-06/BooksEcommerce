@@ -7,6 +7,22 @@ use Illuminate\Database\Eloquent\Model;
 
 class OrderItem extends Model
 {
-    /** @use HasFactory<\Database\Factories\OrderItemFactory> */
     use HasFactory;
+
+    protected $fillable = [
+        'order_id', 
+        'bcopy_id', 
+        'quantity', 
+        'price_each'
+    ];
+
+    public function copy()
+    {
+        return $this->belongsTo(BookCopy::class, 'bcopy_id');
+    }
+
+    public function order()
+    {
+        return $this->belongsTo(Order::class);
+    }
 }

@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Publisher extends Model
 {
+    protected $fillable = ['publisher'];
     /** @use HasFactory<\Database\Factories\PublisherFactory> */
     use HasFactory;
 }
